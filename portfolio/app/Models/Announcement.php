@@ -17,6 +17,6 @@ class Announcement extends Model
 
     public function tags()
 {
-    return $this->belongsToMany(Tag::class, 'announcement_tag_links');
+    return $this->belongsToMany(AnnouncementTag::class, 'announcement_tag_links');
 }
 }

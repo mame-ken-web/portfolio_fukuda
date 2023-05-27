@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class AnnouncementTag extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+    ];
+
     public function announcements()
 {
     return $this->belongsToMany(Announcement::class, 'announcement_tag_links');

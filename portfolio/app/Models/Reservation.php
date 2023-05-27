@@ -32,6 +32,12 @@ class Reservation extends Model
     {
         return $this->belongsTo(Timeslot::class);
     }
+
+    public function availability()
+{
+    return $this->belongsTo(ClassroomAvailability::class);
+}
+
 }
 
 

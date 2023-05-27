@@ -13,17 +13,9 @@ return new class extends Migration
     {
         Schema::create('announcement_tag_links', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('announcement_id');
-            $table->unsignedBigInteger('tag_id');
+            $table->foreignId('announcement_id')->constrained()->onDelete('cascade');
+            $table->foreignId('announcement_tag_id')->constrained()->onDelete('cascade');
             $table->timestamps();
-            $table->foreignId('announcement_id')
-                ->constrained()
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
-            $table->foreignId('tag_id')
-                ->constrained()
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
         });
     }
 

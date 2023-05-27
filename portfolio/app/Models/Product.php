@@ -21,7 +21,7 @@ class Product extends Model
     // この商品が属するカテゴリー
     public function categories()
     {
-        return $this->belongsToMany(ProductCategory::class, 'product_category_product', 'product_id', 'category_id');
+        return $this->belongsToMany(ProductCategory::class, 'product_product_category', 'product_id', 'category_id');
     }
 
     // この商品が持つバリエーション
@@ -45,13 +45,13 @@ class Product extends Model
     // この商品が含まれるカート
     public function carts()
     {
-        return $this->belongsToMany(Cart::class, 'cart_products')->withPivot('quantity');
+        return $this->belongsToMany(Cart::class, 'cart_product')->withPivot('quantity');
     }
 
     // この商品のサイズ情報
     public function sizes()
     {
-        return $this->belongsToMany(ProductSize::class, 'product_size_product', 'product_id', 'size_id');
+        return $this->belongsToMany(ProductSize::class, 'product_product_size', 'product_id', 'size_id');
     }
 
     public function images()

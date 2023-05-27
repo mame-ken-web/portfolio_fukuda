@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ClassroomAvailability extends Model
+class Availability extends Model
 {
     use HasFactory;
 
@@ -19,4 +19,10 @@ class ClassroomAvailability extends Model
     public function classroom() {
         return $this->belongsTo(Classroom::class);
     }
+
+    public function reservations()
+{
+    return $this->hasMany(Reservation::class);
+}
+
 }
