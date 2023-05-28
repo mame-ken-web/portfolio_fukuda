@@ -51,7 +51,7 @@ class Product extends Model
     // この商品のサイズ情報
     public function sizes()
     {
-        return $this->belongsToMany(ProductSize::class, 'product_product_size', 'product_id', 'size_id');
+        return $this->belongsToMany(ProductSize::class, 'product_product_size', 'product_id', 'product_size_id');
     }
 
     public function images()

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('classroom_id')->constrained()->onDelete('cascade');
             $table->foreignId('timeslot_id')->constrained()->onDelete('cascade');
-            $table->foreignId('classroom_availability_id')->constrained()->onDelete('cascade');
+            $table->foreignId('availability_id')->constrained()->onDelete('cascade');
             $table->string('status');
             $table->timestamps();
         });
