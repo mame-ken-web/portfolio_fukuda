@@ -21,7 +21,7 @@ class Product extends Model
     // この商品が属するカテゴリー
     public function categories()
     {
-        return $this->belongsToMany(ProductCategory::class, 'product_product_category', 'product_id', 'category_id');
+        return $this->belongsToMany(ProductCategory::class, 'product_product_category', 'product_id', 'product_category_id');
     }
 
     // この商品が持つバリエーション

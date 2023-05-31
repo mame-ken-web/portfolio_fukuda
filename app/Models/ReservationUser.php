@@ -5,17 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Classroom extends Model
+class ReservationUser extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name',
-        'capacity',
-    ];
+    protected $table = 'reservation_user';
 
-    public function availabilities()
-    {
-        return $this->hasMany(Availability::class);
-    }
+
+    protected $fillable = [
+        'user_id',
+        'reservation_id',
+       
+    ];
 }

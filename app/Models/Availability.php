@@ -25,4 +25,9 @@ class Availability extends Model
     return $this->hasMany(Reservation::class);
 }
 
+public function timeslot()
+{
+    return $this->belongsTo(Timeslot::class);
+}
+
 }

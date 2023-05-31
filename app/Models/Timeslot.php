@@ -13,4 +13,10 @@ class Timeslot extends Model
         'start_time',
         'end_time',
     ];
+
+    public function availabilities()
+    {
+        return $this->hasMany(Availability::class);
+    }
+
 }

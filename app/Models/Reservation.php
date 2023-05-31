@@ -11,10 +11,7 @@ class Reservation extends Model
 
 
     protected $fillable = [
-        'user_id',
-        'classroom_id',
-        'reservation_date',
-        'timeslot_id',
+        'availability_id',
         'status',
     ];
 
@@ -23,15 +20,7 @@ class Reservation extends Model
         return $this->belongsToMany(User::class, 'reservation_user', 'reservation_id', 'user_id');
     }
 
-    public function classroom()
-    {
-        return $this->belongsTo(Classroom::class);
-    }
-
-    public function timeslot()
-    {
-        return $this->belongsTo(Timeslot::class);
-    }
+ 
 
     public function availability()
 {

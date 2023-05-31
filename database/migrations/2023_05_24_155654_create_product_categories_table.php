@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('name');
             $table->foreignId('parent_id')->nullable()->constrained('product_categories');
             $table->timestamps();
-
         });
     }
 
