@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Constants\OrderStatusConstants;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\Models\Product;
@@ -24,6 +26,7 @@ use App\Models\Availability;
 use App\Models\Reservation;
 use App\Models\ReservationUser;
 use App\Models\ProductImage;
+use Illuminate\Support\Arr;
 
 class DatabaseSeeder extends Seeder
 {
@@ -47,7 +50,7 @@ class DatabaseSeeder extends Seeder
 
         foreach ($products as $product) {
             $product->sizes()->attach(
-                $productSizes->random(rand(1, 3))->toArray()
+                $productSizes->random(rand(1, 4))
             );
         }
 
@@ -62,9 +65,9 @@ class DatabaseSeeder extends Seeder
 
             foreach ($orders as $order) {
                 $order->total = 0;
-                $order->status ='completed';
+                $order->status = Arr::random(array_keys(OrderStatusConstants::STATUS_MAP));
 
-            $order->save();  // ここで保存します。
+            $order->save();  // ここで保存。
                 $orderProducts = OrderProduct::factory(rand(2, 10))->make();
 
                 $total = 0;

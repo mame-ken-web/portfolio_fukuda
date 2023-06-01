@@ -183,6 +183,11 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        'ProductCategoryConstants' => \App\Constants\ProductCategoryConstants::class,
+        'OrderStatusConstants' => \App\Constants\OrderStatusConstants::class,
+        'ProductSizeConstants' => \App\Constants\ProductSizeConstants::class,
+        'AnnouncementTagConstants' => \App\Constants\AnnouncementTagConstants::class,
+        'ReservationStatusConstants' => \App\Constants\ReservationStatusConstants::class,
     ])->toArray(),
 
 ];

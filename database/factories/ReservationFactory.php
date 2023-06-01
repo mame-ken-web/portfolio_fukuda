@@ -22,7 +22,7 @@ class ReservationFactory extends Factory
 
     return [
         'availability_id' => $availabilityId,
-        'status' => $this->faker->randomElement(['pending', 'confirmed', 'cancelled']),
+        'status' => $this->faker->numberBetween(1,3),
     ];
     }
 }

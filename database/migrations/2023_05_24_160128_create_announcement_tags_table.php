@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('announcement_tags', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->tinyInteger('name');
             $table->timestamps();
         });
     }
