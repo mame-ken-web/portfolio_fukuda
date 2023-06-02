@@ -4,6 +4,8 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\ProductCategory;
+use App\Constants\ProductCategoryConstants;
+
 
 
 /**
@@ -20,7 +22,7 @@ class ProductCategoryFactory extends Factory
     {
         return [
        
-                'name' => $this->faker->name(),
+                'name' => $this->faker->randomElement(array_keys(ProductCategoryConstants::CATEGORY_MAP)),
                 'parent_id' => null,
             ];
             

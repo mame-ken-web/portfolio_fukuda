@@ -14,12 +14,12 @@ class ProductSizeSeeder extends Seeder
     public function run(): void
     {
         //
-        $sizes = ['S', 'M', 'L', 'XL'];
+        $sizes = [1,2,3,4];
 
-        foreach ($sizes as $size) {
-            DB::table('product_sizes')->insert([
-                'size' => $size
-            ]);
-        }
+        DB::table('product_sizes')->insert(
+            collect($sizes)->map(function($size) {
+                return ['size' => $size];
+            })->toArray()
+        );
     }
 }
