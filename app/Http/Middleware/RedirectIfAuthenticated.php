@@ -31,8 +31,8 @@ class RedirectIfAuthenticated
             return redirect(RouteServiceProvider::ADMIN_HOME);
         }
 
-        if(Auth::guard(self::GUARD_USER)->check() && $request->routeIs('/.*')) {
-            return redirect(RouteServiceProvider::HOME);
+        if(Auth::guard(self::GUARD_USER)->check() && $request->routeIs('user.*')) {
+            return redirect(RouteServiceProvider::USER_HOME);
         }
 
         return $next($request);
